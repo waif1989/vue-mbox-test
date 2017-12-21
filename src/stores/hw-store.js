@@ -2,6 +2,7 @@
 import {observable, action, computed} from 'mobx';
 
 class HwStore {
+
   @observable
   count = 10;
 
@@ -13,6 +14,7 @@ class HwStore {
   changeCount(){
     ++this.count;
   }
+
 }
 
 const hwStore = new HwStore();

@@ -1,4 +1,4 @@
-import { toJS } from 'mobx';
+import { toJS, reaction } from 'mobx';
 let Vue
 export default {
   install (_Vue) {
@@ -17,7 +17,7 @@ export default {
 
 function _applyMixin (Vue) {
   const version = Number(Vue.version.split('.')[0])
-  
+
   if (version >= 2) {
     Vue.mixin({
       beforeCreate: _vmboxInit,
@@ -36,7 +36,7 @@ function _applyMixin (Vue) {
       _init.call(this, options)
     }
   }
-  
+
 }
 
 function _vmboxInit () {
