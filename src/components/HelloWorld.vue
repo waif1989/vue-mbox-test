@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <router-link to="/other">go to other pages</router-link>
     <div v-for="(val, key) in list">{{val.name}}</div>
     <div>{{count}}&nbsp;&nbsp;<button @click="add">+</button></div>
     <div><button @click="insert">insert todoList</button></div>
+    <br/>
+    <router-link to="/other">go to Page2</router-link>
   </div>
 </template>
 
@@ -17,7 +18,7 @@
       return {
         list: toJS(todoListStore.todos),
         count: toJS(todoListStore.count),
-        msg: 'Welcome to Your Vue.js App',
+        msg: 'Page1'
       }
     },
     methods: {
