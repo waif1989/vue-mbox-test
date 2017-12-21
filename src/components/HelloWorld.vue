@@ -31,6 +31,7 @@
     data () {
       return {
         testdata: this.$mbstore.total,
+        testdata2: 10,
         msg: 'Welcome to Your Vue.js App',
         // count: this.$vmobxStore.total
       }
@@ -38,7 +39,7 @@
     computed: {
       _count () {
         // return this.$toJS(this.count);
-        return this.$mbstore.total;
+        return this.count;
         // return 10
       }
     },
@@ -49,6 +50,7 @@
     },*/
     methods: {
       add () {
+        this.count++
         this.$mbstore.changeCount();
         /*this.count++
         reaction (() => this.$mbstore.total, (total) => {
